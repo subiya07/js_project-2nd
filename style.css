@@ -1,0 +1,58 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+body {
+    background-image: url(https://files.oaiusercontent.com/file-Amc1VvEtwcpGzbmC4Uq2SW?se=2024-12-26T12%3A27%3A33Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D28e91064-120e-407e-bc1e-ad3bbdea09ac.webp&sig=LQ0WOYidiRvxMfz8ExmfR%2BexSdliZH3rWndm7nP0LD8%3D);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    height: 100vh;
+}
+
+.contactlist {
+    width: 400px;
+    background: linear-gradient(45deg, rgb(8, 201, 194), rgb(10, 44, 233));
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.inp .inpVal {
+    width: 100%;
+    padding: 10px 15px;
+    border: 2px solid gray;
+    outline: none;
+    border-radius: 5px;
+}
+
+.lists {
+    list-style-type: none;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.lists li {
+    border: 1px solid gray;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 10px;
+    font-size: 20px;
+    background-color: mediumaquamarine;
+    color: white;
+    font-weight: 500;
+}
+
+/* Hidden class to hide the list */
+.hidden {
+    display: none;
+}

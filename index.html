@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact List - Search Bar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>
+        Contact List
+    </h1>
+    <div class="contactlist">
+        <div class="inp">
+            <input type="search" class="inpVal" placeholder="Search Contact" oninput="getChangeInputValue(event)">
+        </div>
+        <ul class="lists hidden">
+            <!-- Contacts will be dynamically added here -->
+        </ul>
+    </div>
+    <script>
+        var contacts = ["Steve", "Chris", "Charles", "Tony", "Stanley", "Jason", "John", "Tim", "Larry", "Lilly", "Evans", "Adams", "Rose", "Reena", "Paul", "Awez", "Eden", "Queen", "upton"];
+        var lists = document.querySelector(".lists");
+
+        function getChangeInputValue(event) {
+            let inpVal = event.target.value.trim();
+            if (inpVal === "") {
+                lists.classList.add("hidden"); // Hide the list if the input is empty
+                lists.innerHTML = ""; // Clear the list
+                return;
+            }
+
+            let filteredContacts = contacts.filter((data) =>
+                data.toLowerCase().includes(inpVal.toLowerCase())
+            );
+
+            if (filteredContacts.length > 0) {
+                let contactItems = filteredContacts.map((item) => `<li>${item}</li>`);
+                showContacts(contactItems);
+                lists.classList.remove("hidden"); // Show the list
+            } else {
+                lists.classList.add("hidden"); // Hide the list if no matches
+                lists.innerHTML = ""; // Clear the list
+            }
+        }
+
+        function showContacts(data) {
+            lists.innerHTML = data.join("");
+        }
+    </script>
+</body>
+
+</html>
